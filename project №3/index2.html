@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan</title>
+
+    <style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        max-width: 30rem;
+        padding: 2rem;
+        color: black;
+        background-color: bisque;
+        border-radius: 0.5rem;
+    }
+
+    a {
+        text-align: right;
+    }
+
+    h1 {
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+
+    .input_box {
+        margin: 1rem 0;
+    }
+
+    .input_box label {
+        display: inline-block;
+        width: 6rem;
+        font-size: 20px;
+    }
+
+    input {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: white;
+    }
+
+    #button {
+        width: 10rem;
+        margin: 0 auto;
+        border-radius: 0.5rem;
+        background-color: rgb(124, 255, 233);
+    }
+    </style>
+</head>
+<body>
+    <form action="#" method="post" class="form">
+        <a href="./index1.html">page #1</a>
+        <h1>Ivan Form#2</h1>
+        <div class="input_box">
+            <label for="name"><b>Ім'я</b></label>
+            <input type="text" placeholder="name" id="name">
+        </div>
+        <div class="input_box">
+            <label for="email"><i>Електронна пошта:</i></label>
+            <input type="email" placeholder="email" id="email">
+        </div>
+        <div class="input_box">
+            <label for="password"><b>Пароль:</b></label>
+            <input type="password" placeholder="password" id="password">
+        </div>
+        <input type="submit" id="button" value="Відправити">
+    </form>
+</body>
+</html>
