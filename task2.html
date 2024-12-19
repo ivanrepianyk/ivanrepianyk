@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Конвертер</title>
+    <script>
+      function convertCurrency() {
+        const amountInput = document.getElementById("amount");
+        const amount = parseFloat(amountInput.value);
+
+        const fromCurrencySelect = document.getElementById("fromCurrency");
+        const fromCurrency = fromCurrencySelect.value;
+
+        const toCurrencySelect = document.getElementById("toCurrency");
+        const toCurrency = toCurrencySelect.value;
+
+        const exchangeRates = {
+          USD: 1,
+          EUR: 0.9,
+          UAH: 42,
+        };
+
+        if (isNaN(amount) || amount <= 0) {
+          document.getElementById("result").innerText =
+            "Введіть коректну суму.";
+          return;
+        }
+
+        if (!exchangeRates[fromCurrency] || !exchangeRates[toCurrency]) {
+          document.getElementById("result").innerText =
+            "Оберіть правильні валюти.";
+          return;
+        }
+
+        const amountInUSD = amount / exchangeRates[fromCurrency];
+        const convertedAmount = amountInUSD * exchangeRates[toCurrency];
+
+        document.getElementById("result").innerText = `${amount.toFixed(
+          2
+        )} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Конвертер Валют</h1>
+
+    <label for="amount">Сума для конвертації:</label>
+    <input type="number" id="amount" placeholder="Введіть суму" />
+
+    <label for="fromCurrency">Вихідна валюта:</label>
+    <select id="fromCurrency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="UAH">UAH</option>
+    </select>
+
+    <label for="toCurrency">Цільова валюта:</label>
+    <select id="toCurrency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="UAH">UAH</option>
+    </select>
+
+    <button onclick="convertCurrency()">Конвертувати</button>
+
+    <h2>Результат:</h2>
+    <p id="result"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
