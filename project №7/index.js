@@ -1,7 +1,5 @@
-// Змінна із середньою оцінкою
 let averageGrade = 90; // Задайте оцінку від 0 до 100
 
-// Визначення рівня успішності за допомогою switch/case
 switch (true) {
   case (averageGrade < 60):
     console.log("Незадовільно");
